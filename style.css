@@ -9,6 +9,61 @@ html {
 }
 
 /* navbar */
+.navbar {
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navbar brand (logo/title) */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #0056b3;
+}
+
+/* Navbar items container */
+.navbar-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Navbar links */
+.navbar-nav .nav-link {
+  color: #333;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff;
+  background-color: rgba(0, 123, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Active link style (optional) */
+.navbar-nav .nav-link.active {
+  color: #fff;
+  background-color: #007bff;
+}
+
+/* Toggler customization */
+.navbar-toggler {
+  border-color: rgba(0, 0, 0, 0.2);
+}
 
 /* home */
 #home {
@@ -255,6 +310,7 @@ p {
   p {
     font-size: 1.2rem;
   }
+
 }
 
 /* about */
@@ -306,6 +362,63 @@ p {
 .icon-contact a {
   color: rgba(152, 110, 110, 0.4) !important;
 }
+
+/* skill style */
+.skills-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.skills-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  gap: 30px;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 150px;
+  text-align: center;
+}
+
+.skill:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 123, 255, 0.2);
+}
+
+.skill img {
+  max-width: 64px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.skill p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Control layout: place 9 items in grid, forcing 5 in first row, 4 in second */
+.skills-container > .skill:nth-child(6) {
+  grid-column-start: 1;
+}
+
 
 /* projects */
 #projects {
@@ -538,6 +651,7 @@ textarea.feedback-input:focus {
   font-family: "Arial", sans-serif;
   background-color: #4caf50;
   color: white;
+  /* color: grey; */
   border: none;
   padding: 12px 30px;
   font-size: 16px;
