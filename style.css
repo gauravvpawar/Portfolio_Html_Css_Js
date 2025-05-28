@@ -99,16 +99,30 @@ body {
   max-width: 600px;
   padding: 20px;
   text-align: center;
+  animation: fadeIn 1s ease-out;
 }
-@media (max-width: 768px) {
-  .home-content {
-    padding: 20px 10px;
-  }
-  
-  .home-content h2, .Intro {
-    font-size: 2rem;
-  }
+
+.home-logo {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  min-width: 300px;
+  animation: fadeIn 1s ease-out 0.3s both;
 }
+
+.home-logo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.home-logo img:hover {
+  transform: scale(1.03);
+}
+
 .home-content h2 {
   font-size: 2.5rem;
   margin: 0 0 10px;
@@ -123,26 +137,7 @@ body {
 .name {
   color: #007bff;
   font-weight: bold;
-  position: relative;
   display: inline-block;
-}
-
-.name::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  bottom: 0;
-  left: 0;
-  background: #007bff;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.4s ease;
-}
-
-.name:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
 }
 
 p {
@@ -172,6 +167,8 @@ p {
   display: flex;
   gap: 15px;
   margin: 20px 0;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .social-icons li a {
@@ -213,26 +210,6 @@ p {
 
 .myWorks-btn:hover i {
   transform: translateX(5px);
-}
-
-.home-logo {
-  flex: 1;
-  text-align: center;
-  padding: 20px;
-  min-width: 300px;
-}
-
-.avatar {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  animation: float 4s ease-in-out infinite;
-  transition: transform 0.3s ease;
-}
-
-.avatar:hover {
-  transform: scale(1.03);
 }
 
 /* Animations */
@@ -282,7 +259,6 @@ p {
   }
 }
 
-/* New Animation - Fade In */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -294,26 +270,21 @@ p {
   }
 }
 
-.home-content {
-  animation: fadeIn 1s ease-out;
-}
-
-.home-logo {
-  animation: fadeIn 1s ease-out 0.3s both;
-}
-
 /* Responsive Design */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .home-wrapper {
     flex-direction: column-reverse;
     text-align: center;
   }
 
-  .social-icons {
-    justify-content: center;
+  .home-content,
+  .home-logo {
+    flex: 100%;
+    max-width: 100%;
   }
 
-  .home-content h2 {
+  .home-content h2,
+  .Intro {
     font-size: 2rem;
   }
 
@@ -325,6 +296,35 @@ p {
     font-size: 1.2rem;
   }
 
+  .home-logo img {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .myWorks-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.95rem;
+  }
+
+  .social-icons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .social-icons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .myWorks-btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
 }
 
 /* about */
