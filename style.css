@@ -105,7 +105,7 @@ body {
 .home-logo {
   flex: 1;
   text-align: center;
-  padding: 20px;
+  padding: 60px;
   min-width: 300px;
   animation: fadeIn 1s ease-out 0.3s both;
 }
